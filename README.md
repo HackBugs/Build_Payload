@@ -1,5 +1,26 @@
 # Build_Payload
 
+```sh
+Check which program is running this port
+sudo lsof -i :9043
+sudo netstat -tulnp | grep 9043
+sudo ss -tulnp | grep 9043
+sudo fuser 9043/tcp
+
+sudo ufw allow 9090/tcp - allows firewall traffic on port 9090:
+cmd - netstat and ss and
+cmd - sudo ethtool enp0s3
+./prometheus --web.listen-address=":9043" &
+
+sudo ufw status
+sudo ufw enable
+sudo ufw allow 9043/tcp
+sudo ufw allow 9043/udp
+sudo ufw deny 9043/tcp
+```
+
+<hr>
+
 1. **Update Package Index**: Start by updating the package list to ensure that you have the latest information about available packages.
 
     ```bash
