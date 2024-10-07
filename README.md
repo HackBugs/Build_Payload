@@ -303,3 +303,17 @@ Meterpreter sessions ke through tum bohot saari functionalities access kar sakte
     - **Command**: `reboot`
     - **Description**: Target device ko reboot karo.
 
+<hr>
+
+### Additional Checks
+
+- **Logcat**:
+   - Agar tumhe Android device ka debug log dekhna hai, toh tum **ADB (Android Debug Bridge)** ka use kar sakte ho:
+     ```bash
+     adb logcat
+     ```
+   - Isse tum APK ki activity ya errors dekh sakte ho.
+
+- **Check for Active Connections**:
+   - Tum phone ke **Settings** > **Network** > **Data Usage** section me jaake active connections dekh sakte ho.
+
